@@ -22,7 +22,7 @@ services:
       target: api_platform_pwa_prod
     environment:
       API_PLATFORM_CLIENT_GENERATOR_ENTRYPOINT: http://caddy
-      NEXT_PUBLIC_ENTRYPOINT: http://caddy
+      REACT_APP_API_ENTRYPOINT: http://caddy
 
   caddy:
     build:
@@ -34,8 +34,8 @@ services:
     environment:
       PWA_UPSTREAM: pwa:3000
       SERVER_NAME: ${SERVER_NAME:-cda2-devops-hamza.simplon-roanne.com, caddy:80}
-      MERCURE_PUBLISHER_JWT_KEY: ${MERCURE_PUBLISHER_JWT_KEY:-!ChangeMe!}
-      MERCURE_SUBSCRIBER_JWT_KEY: ${MERCURE_SUBSCRIBER_JWT_KEY:-!ChangeMe!}
+      MERCURE_PUBLISHER_JWT_KEY: ${MERCURE_PUBLISHER_JWT_KEY:-AllAuto}
+      MERCURE_SUBSCRIBER_JWT_KEY: ${MERCURE_SUBSCRIBER_JWT_KEY:-AllAuto}
     restart: unless-stopped
     volumes:
       - php_socket:/var/run/php
@@ -59,8 +59,8 @@ services:
     image: postgres:13-alpine
     environment:
       - POSTGRES_DB=api
-      - POSTGRES_PASSWORD=!ChangeMe!
-      - POSTGRES_USER=api-platform
+      - POSTGRES_PASSWORD=AllAuto
+      - POSTGRES_USER=hamzasimplonroanne
     volumes:
       - db_data:/var/lib/postgresql/data:rw
       # you may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!

@@ -38,7 +38,7 @@ CMD ["yarn", "dev"]
 FROM api_platform_pwa_common AS api_platform_pwa_prod
 
 ENV NODE_ENV production
-ARG NEXT_PUBLIC_ENTRYPOINT
+ARG REACT_APP_API_ENTRYPOINT
 
 RUN set -eux; \
 	yarn build
