@@ -33,9 +33,10 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Docker build ls 
+      - name: Push on Docker Repo 
         id:   docker_build 
-        run: sudo docker container ls 
+        run: sudo docker push 40208832856984509390967/api-platform-devops-hamza:tagname 
+        
       # - name: Build and push Docker image
       #   id:   docker_build 
       #   uses: docker/build-push-action@v2
