@@ -26,18 +26,22 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
           
-      - name: Docker build ls 
-      - run: docker buildx ls
+      # - name: Install Go
+      #   uses: actions/setup-go@v2
+      #   with:
+      #     go-version: 1.16.4
 
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Build and push Docker image
+      - name: Docker build ls 
         id:   docker_build 
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: api-platform-devops-vercell:latest
+        run: sudo docker buildx ls
+      # - name: Build and push Docker image
+      #   id:   docker_build 
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     push: true
+      #     tags: api-platform-devops-vercel:latest
 
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+      # - name: Image digest
+      #   run: echo ${{ steps.docker_build.outputs.digest }}
