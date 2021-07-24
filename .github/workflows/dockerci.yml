@@ -12,7 +12,7 @@ jobs:
     name: CI to Docker Hub
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_ENTRYPOINT: https://localhost
+      NEXT_PUBLIC_ENTRYPOINT: https://cda2-devops-hamza.simplon-roanne.com/
     steps:
       # - name: Release to Docker Hub
 
