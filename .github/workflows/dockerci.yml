@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Push on Docker Repo 
         id:   docker_build 
-        run: sudo docker push 40208832856984509390967/api-platform-devops-hamza:tagname 
+        run: sudo docker push ${{ secrets.DOCKER_HUB_USERNAME }}/api-platform-devops-hamza:tagname 
         
       # - name: Build and push Docker image
       #   id:   docker_build 
