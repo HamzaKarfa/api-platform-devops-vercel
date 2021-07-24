@@ -26,10 +26,8 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
           
-      - name: Install Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.16.4
+      - name: Docker build ls 
+      - run: docker buildx ls
 
       - name: Checkout code
         uses: actions/checkout@v2
