@@ -9,12 +9,12 @@ on:
 
 jobs:
   tests:
-    name: Tests
+    name: CI to Docker Hub
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_ENTRYPOINT: https://localhost
     steps:
-    name: Release to Docker Hub
+      - name: Release to Docker Hub
 
 jobs:
   release:
