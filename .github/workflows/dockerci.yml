@@ -33,10 +33,17 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Push on Docker Repo 
-        id:   docker_build 
-        run: sudo docker push ${{ secrets.DOCKER_HUB_USERNAME }}/api-platform-devops-hamza:tagname 
-        
+      # - name: Push on Docker Repo 
+      #   id:   docker_build 
+      #   run: sudo docker push ${{ secrets.DOCKER_HUB_USERNAME }}/api-platform-devops-hamza:tagname 
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/api-platform-devops-hamza:lastest
       # - name: Build and push Docker image
       #   id:   docker_build 
       #   uses: docker/build-push-action@v2
