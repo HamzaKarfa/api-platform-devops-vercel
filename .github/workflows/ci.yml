@@ -9,7 +9,7 @@ on:
 
 jobs:
   tests:
-    name: Tests
+    name: CI
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_ENTRYPOINT: https://localhost
