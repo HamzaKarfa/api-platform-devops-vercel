@@ -34,7 +34,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Push on Docker Repo 
-        run: sudo docker --version | sudo docker container ls 
+        run: sudo docker --version | sudo ls 
 
 
       - name: Build and push
