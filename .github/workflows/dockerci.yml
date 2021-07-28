@@ -37,7 +37,7 @@ jobs:
         id:   docker_build 
         run: docker build ./pwa
       - name: Tag Docker
-        run: docker tag 1da979d18ae8:lastest 40208832856984509390967/api-platform-devops-hamza:lastest
+        run: docker tag 40208832856984509390967/api-platform-devops-hamza:lastest 40208832856984509390967/api-platform-devops-hamza:lastest
       - name: Push on Docker Repo 
         id:   docker_push 
         run:  docker push 40208832856984509390967/api-platform-devops-hamza:lastest
