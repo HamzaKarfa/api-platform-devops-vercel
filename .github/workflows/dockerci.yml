@@ -38,7 +38,7 @@ jobs:
         run: docker build ./pwa
       - name: Push on Docker Repo 
         id:   docker_push 
-        run: docker push 40208832856984509390967/api-platform-devops-hamza:lastest
+        run: docker push 40208832856984509390967/api-platform-devops-vercel:lastest
       # - name: Build and push
       #   id: docker_build
       #   uses: docker/build-push-action@v2
