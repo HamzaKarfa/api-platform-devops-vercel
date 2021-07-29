@@ -4,7 +4,6 @@ on:
   pull_request: 
     branches:
         - main
-  workflow_dispatch: ~
 
 jobs:
   tests:
@@ -59,3 +58,4 @@ jobs:
           vercel-args: '--confirm'
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
+ 
