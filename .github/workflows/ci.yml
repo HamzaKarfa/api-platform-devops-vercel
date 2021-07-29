@@ -44,8 +44,8 @@ jobs:
         run: docker-compose exec -T php composer require -n symfony/test-pack symfony/http-client justinrainbow/json-schema
       # - name: ls
       #   run: docker-compose exec -T php ls -al
-      - name: pwd
-        run: docker-compose exec -T php pwd
+      # - name: pwd
+      #   run: docker-compose exec -T php pwd
       - name: PHPUnit
         run: docker-compose exec -T php vendor/bin/phpunit /srv/api/tests
       - name: Doctrine Schema Validator
@@ -67,9 +67,9 @@ jobs:
     
       - name: Build Docker 
         id:   docker_build 
-        run: docker container ls 
-      # - name: Tag Docker
-      #   run: docker tag 40208832856984509390967/api-platform-devops-hamza:lastest 40208832856984509390967/api-platform-devops-hamza:lastest
+        run: docker image ls 
+      - name: Tag Docker
+        run: docker tag api-platform-devops-vercel_pwa  40208832856984509390967/api-platform-devops-hamza:lastest
       - name: Push on Docker Repo 
         id:   docker_push 
         run:  docker push 40208832856984509390967/api-platform-devops-hamza:lastest
