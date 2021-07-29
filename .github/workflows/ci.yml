@@ -78,4 +78,3 @@ jobs:
           pr_reviewer: "test"
           pr_draft: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
