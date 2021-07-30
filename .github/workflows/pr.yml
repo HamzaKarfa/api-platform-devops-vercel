@@ -3,7 +3,7 @@ name: PR and pull
 on:
   pull_request: 
     branches:
-        - main
+        - master
   workflow_dispatch: ~
 
 jobs:
